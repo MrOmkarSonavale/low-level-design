@@ -66,7 +66,5 @@ It’s a reflection of my problem-solving skills and engineering mindset.
 
 C++ / Javascript (Primary languages for implementation)
 
-UML Diagrams (Text or tool-generated)
-
 Modular folder structure with documentation
 
