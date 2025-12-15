@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 class Burger
@@ -12,9 +11,9 @@ public:
 class BasicBurger : public Burger
 {
 public:
-    void prepare() override
+    void prepareBurger() override
     {
-        cout << "Preparing a basic burger." << endl;
+        cout << "Preparing the basic burger" << endl;
     }
 };
 
