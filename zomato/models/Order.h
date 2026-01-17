@@ -1,0 +1,127 @@
+#ifndef ORDER_H
+#define ORDER_H
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include "User.h"
+#include "Restaurant.h"
+#include "MenuItem.h"
+#include "../strategies/PaymentStrategy.h";
+#include "utils/TimeUtils.h";
+
+using namespace std;
+
+class Order
+{
+protected:
+    static int nextOrderId;
+    int orderId;
+    User *user;
+    Restaurant *restaurant;
+    vector<MenuItem> items;
+    PaymentStrategy *paymentStrategy;
+    double total;
+    string schedule;
+
+public:
+    Order()
+    {
+        user = nullptr;
+        restaurant = nullptr;
+        total = 0;
+        schedule = "";
+        orderId = ++nextOrderId;
+    };
+
+    virtual ~order()
+    {
+        delete paymentStrategy;
+    };
+
+    bool processPayment()
+    {
+        if (paymentStrategy)
+        {
+            paymentStrategy->pay(total);
+            return true;
+        }
+        else
+        {
+            cout << "Please choose a payment mode first" << endl;
+            return false;
+        };
+    };
+
+    virtual string getType() const = 0;
+
+    int getOrderId()
+    {
+        return orderId;
+    };
+
+    void setUser(User *u)
+    {
+        user = u;
+    };
+
+    User *getUser()
+    {
+        return user;
+    };
+
+    void setRestaurant(Restaurant *r)
+    {
+        restaurant = r;
+    };
+
+    Restaurant *getRestaurant()
+    {
+        return restaurant;
+    };
+
+    void setItems(const vector<MenuItem> &itm)
+    {
+        items = its;
+        total = 0;
+
+        for (auto &i : items)
+        {
+            total += i.getPrice();
+        };
+    };
+
+    vector<MenuItem> &getItems()
+    {
+        return items;
+    };
+
+    void setPaymentStrategy(PaymentStrategy *p)
+    {
+        paymentStrategy = p;
+    };
+
+    void setScheduled(const string &s)
+    {
+        schedule = s;
+    };
+
+    string getScheduled()
+    {
+        return schedule;
+    };
+
+    double getTotal()
+    {
+        return total;
+    };
+
+    void setTotal(int total)
+    {
+        this->total = total;
+    };
+};
+
+int Order::nextOrderId = 0;
+
+#endif;
