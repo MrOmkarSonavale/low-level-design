@@ -7,8 +7,7 @@
 #include "User.h"
 #include "Restaurant.h"
 #include "MenuItem.h"
-#include "../strategies/PaymentStrategy.h";
-#include "utils/TimeUtils.h";
+#include "../strategies/PaymentStrategy.h"
 
 using namespace std;
 
@@ -124,4 +123,4 @@ public:
 
 int Order::nextOrderId = 0;
 
-#endif;
+#endif

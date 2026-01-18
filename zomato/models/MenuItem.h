@@ -13,7 +13,7 @@ private:
     int price;
 
 public:
-    MenuItem(const string &code, const string &name, const string &price)
+    MenuItem(const string &code, const string &name, int price)
     {
         this->code = code;
         this->name = name;
@@ -27,7 +27,7 @@ public:
 
     void setCode(const string &c)
     {
-        cpde = c;
+        code = c;
     };
 
     string getName()
@@ -51,4 +51,4 @@ public:
     };
 };
 
-#endif;
+#endif

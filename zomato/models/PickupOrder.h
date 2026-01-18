@@ -30,3 +30,5 @@ public:
         return restaurantAddress;
     };
 };
+
+#endif

@@ -4,8 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "../models/MenuItem.h";
-#include "../models/Restaurant.h";
+#include "../models/MenuItem.h"
+#include "../models/Restaurant.h"
 
 using namespace std;
 
@@ -70,4 +70,4 @@ public:
     };
 };
 
-#endif;
+#endif

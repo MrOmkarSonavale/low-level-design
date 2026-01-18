@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <MenuItem.h>
+#include "MenuItem.h"
 
 class Restaurant
 {
@@ -34,9 +34,9 @@ public:
         return name;
     };
 
-    void setName(const string &name)
+    void setName(const string &localName)
     {
-        name = name;
+        name = localName;
     };
 
     void setLocation(const string &loc)
