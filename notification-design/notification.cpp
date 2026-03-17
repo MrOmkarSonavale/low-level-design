@@ -182,7 +182,7 @@ public:
     }
 };
 
-class SMSStrategy : public INotificationStrategy
+class SMSStrategy : public INotificationStreategy
 {
 private:
     string mobileNumber;
